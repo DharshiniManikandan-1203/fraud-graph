@@ -1,0 +1,76 @@
+{
+  "dataset_name": "Unified Real-World Financial Fraud & AML Graph (Elliptic + PaySim + IBM)",
+  "evaluation_timestamp": "2026-09-17T19:00:21.591382",
+  "total_samples": 25,
+  "train_samples": 18,
+  "test_samples": 7,
+  "fraud_count": 14,
+  "licit_count": 11,
+  "test_metrics": {
+    "roc_auc": 1.0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": {
+      "true_negative": 3,
+      "false_positive": 0,
+      "false_negative": 0,
+      "true_positive": 4
+    }
+  },
+  "model_architecture": {
+    "classifier": "XGBoost Gradient Boosted Trees",
+    "anomaly_detector": "Isolation Forest (100 Trees, Contamination=0.15)",
+    "graph_neural_net": "Vectorized 2-Layer GraphSAGE (Mean Neighborhood Aggregator)",
+    "ensemble_weights": {
+      "graph_rules": 0.35,
+      "xgboost_ml": 0.3,
+      "gnn_embeddings": 0.2,
+      "isolation_forest": 0.15
+    }
+  },
+  "top_feature_importances": [
+    {
+      "feature": "nbr_avg_risk_score",
+      "importance": 43.27
+    },
+    {
+      "feature": "nbr_1hop_flagged_ratio",
+      "importance": 37.29
+    },
+    {
+      "feature": "betweenness",
+      "importance": 10.37
+    },
+    {
+      "feature": "in_volume_total",
+      "importance": 3.0
+    },
+    {
+      "feature": "out_volume_total",
+      "importance": 2.15
+    },
+    {
+      "feature": "degree_ratio",
+      "importance": 2.07
+    },
+    {
+      "feature": "volume_velocity_ratio",
+      "importance": 1.52
+    },
+    {
+      "feature": "max_tx_amount",
+      "importance": 0.25
+    },
+    {
+      "feature": "avg_tx_amount",
+      "importance": 0.08
+    },
+    {
+      "feature": "pagerank",
+      "importance": 0.0
+    }
+  ],
+  "gnn_embedding_clusters_count": 25
+}

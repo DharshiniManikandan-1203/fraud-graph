@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://fraud-graph-api.onrender.com/api/:path*"
+    },
+    {
+      "source": "/static/:path*",
+      "destination": "/:path*"
+    }
+  ]
+}
